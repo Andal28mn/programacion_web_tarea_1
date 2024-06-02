@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Prueba</title>
+</head>
+
+<body>
+  <form id="myForm"> Seleccione un país: <select name="paises">
+      <optgroup label="América">
+        <option value="1">Estados Unidos</option>
+        <option value="2">Canadá</option>
+        <option value="3">México</option>
+        <option value="4">Brasil</option>
+        <option value="5">Argentina</option>
+        <option value="6">Colombia</option>
+        <option value="7">Perú</option>
+        <option value="8">Venezuela</option>
+        <option value="9">Chile</option>
+        <option value="10">Ecuador</option>
+      </optgroup>
+      <optgroup label="Europa">
+        <option value="11">Reino Unido</option>
+        <option value="12">Francia</option>
+        <option value="13">Alemania</option>
+        <option value="14">Italia</option>
+        <option value="15">España</option>
+        <option value="16">Rusia</option>
+        <option value="17">Países Bajos</option>
+        <option value="18">Bélgica</option>
+        <option value="19">Suiza</option>
+        <option value="20">Suecia</option>
+      </optgroup>
+    </select> <br> <input type="submit" value="Enviar"> </form>
+
+  <div id="result"></div>
+
+  <script>
+    // Obtener el formulario
+    const form = document.getElementById('myForm');
+
+    // Agregar un evento de envío al formulario
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Evita el envío del formulario
+
+      // Obtener el valor seleccionado en el campo "paises"
+      const selectedCountry = form.elements.paises.value;
+
+      // Obtener el elemento donde se mostrará el resultado
+      const resultElement = document.getElementById('result');
+
+      // Mostrar el país seleccionado
+      resultElement.textContent = `Has seleccionado el país: ${selectedCountry}`;
+    });
+  </script>
+</body>
+
+</html>
