@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba de formulario</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form>
+  Seleccione uno o varios mail (Presione Ctrl para seleccionar varios mail)<br>
+  <select name="mail[]" size="4" multiple>
+    <option value="juanperez@example.com">Juan Pérez</option>
+    <option value="mariagarcia@example.org">María García</option>
+    <option value="carlosramirez@example.net">Carlos Ramírez</option>
+    <option value="luisalopez@example.com">Luisa López</option>
+    <option value="pedroaguirre@example.org">Pedro Aguirre</option>
+  </select>
+  <br>
+  <input type="button" value="Enviar" onclick="mostrarDatos()">
+</form>
+
+<div id="resultados"></div>
+
+<script>
+function mostrarDatos() {
+  var selectedEmails = Array.from(document.querySelectorAll('select[name="mail[]"] option:checked'))
+                       .map(option => option.value);
+
+  var resultadosDiv = document.getElementById('resultados');
+  resultadosDiv.innerHTML = 'Emails seleccionados: <br>' + selectedEmails.join('<br>');
+}
+</script>
+</body>
+</html>
