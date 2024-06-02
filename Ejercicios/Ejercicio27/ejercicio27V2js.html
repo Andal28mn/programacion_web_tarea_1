@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba de formulario</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form onsubmit="submitForm(event)">
+  Ingrese su nombre:
+  <input type="text" name="nombre" size="30" required><br>
+  Ingrese su mail:
+  <input type="email" name="mail" size="50" required><br>
+  Ingrese su dni:
+  <input type="text" name="dni" size="9" required><br>
+  Ingrese su Curriculum:<br>
+  <textarea name="curriculum" rows="7" cols="80" required></textarea>
+  <br>
+  <input type="submit" value="Enviar">
+</form>
+
+<div id="result"></div>
+
+<script>
+  function submitForm(event) {
+    event.preventDefault(); 
+
+    // Obtener los valores del formulario
+    var nombre = document.querySelector('input[name="nombre"]').value;
+    var mail = document.querySelector('input[name="mail"]').value;
+    var dni = document.querySelector('input[name="dni"]').value;
+    var curriculum = document.querySelector('textarea[name="curriculum"]').value;
+
+    // Mostrar los datos en pantalla
+    document.getElementById('result').innerHTML = `
+      Nombre: ${nombre}<br>
+      Correo electrónico: ${mail}<br>
+      DNI: ${dni}<br>
+      Curriculum:<br>
+      ${curriculum}
+    `;
+  }
+</script>
+</body>
+</html>
