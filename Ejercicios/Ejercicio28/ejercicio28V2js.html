@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba de formulario</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form>
+  Ingrese su mail:
+  <input type="text" name="mail" size="50"><br>
+  Ingrese su clave:
+  <input type="password" name="clave" size="10"><br>
+  <em>Seleccione las películas a pedir:</em>
+  <br>
+  <input type="checkbox" name="pelicula1">John Wick<br> 
+  <input type="checkbox" name="pelicula2">Avengers: Endgame<br> 
+  <input type="checkbox" name="pelicula3">The Lord of the Rings: The Fellowship of the Ring<br> 
+  <input type="checkbox" name="pelicula4">Dune<br> 
+  <input type="button" value="Enviar" onclick="mostrarDatos()"> 
+</form>
+
+<div id="resultados"></div>
+
+<script>
+function mostrarDatos() {
+  var mail = document.querySelector('input[name="mail"]').value;
+  var clave = document.querySelector('input[name="clave"]').value;
+  var peliculas = [];
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  for (var i = 0; i < checkboxes.length; i++) {
+    peliculas.push(checkboxes[i].nextSibling.textContent);
+  }
+
+  var resultadosDiv = document.getElementById('resultados');
+  resultadosDiv.innerHTML = 'Mail: ' + mail + '<br>Clave: ' + clave + '<br>Películas seleccionadas: ' + peliculas.join(', ');
+}
+</script>
+</body>
+</html>
