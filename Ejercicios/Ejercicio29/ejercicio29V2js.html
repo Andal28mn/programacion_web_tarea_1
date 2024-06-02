@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba de formulario</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form>
+  Ingrese su nombre:
+  <input type="text" name="nombre" size="30"><br>
+  Que sistema operativo utiliza más?
+  <br>
+  <input type="radio" name="so" value="1">Windows<br>
+  <input type="radio" name="so" value="2">Linux<br>
+  <input type="button" value="Enviar" onclick="mostrarDatos()">
+</form>
+
+<div id="resultados"></div>
+
+<script>
+function mostrarDatos() {
+  var nombre = document.querySelector('input[name="nombre"]').value;
+  var so = document.querySelector('input[name="so"]:checked').value;
+  var sistemaOperativo = so === '1' ? 'Windows' : 'Linux';
+
+  var resultadosDiv = document.getElementById('resultados');
+  resultadosDiv.innerHTML = 'Nombre: ' + nombre + '<br>Sistema operativo: ' + sistemaOperativo;
+}
+</script>
+</body>
+</html>
