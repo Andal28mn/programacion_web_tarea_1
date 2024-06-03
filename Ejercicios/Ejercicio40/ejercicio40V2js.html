@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Formulario - text/password y maxlength</title>
+</head>
+<body>
+    <form id="formulario">
+        Ingrese su Nombre y Apellido: 
+        <input type="text" id="nombre" maxlength="40" size="20">
+        <br>
+        Ingrese su Edad: 
+        <input type="text" id="edad" maxlength="3" size="3">
+        <br>
+        Ingrese su Dni: 
+        <input type="text" id="dni" maxlength="8" size="8">
+        <br>
+        <input type="submit" value="enviar">
+    </form>
+    
+    <div id="datos-insertados"></div>
+
+    <script>
+        const formulario = document.getElementById('formulario');
+
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const edad = document.getElementById('edad').value;
+            const dni = document.getElementById('dni').value;
+
+            const datosInsertados = `
+                Nombre y Apellido: ${nombre}
+                Edad: ${edad}
+                DNI: ${dni}
+            `;
+
+            document.getElementById('datos-insertados').textContent = datosInsertados;
+        });
+    </script>
+</body>
+</html>
