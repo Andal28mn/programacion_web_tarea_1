@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Libro de Visitas</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form id="visita-form">
+    Nombre: <input type="text" name="nombre" size="30"><br>
+    Email: <input type="text" name="email" size="30"><br>
+    País de Origen: <select name="pais">
+      <option value="1" selected>Seleccione país</option>
+      <option value="1">Argentina</option>
+      <option value="2">España</option>
+      <option value="3">México</option>
+      <option value="4">Guatemala</option>
+      <option value="5">Honduras</option>
+      <option value="7">El Salvador</option>
+      <option value="8">Venezuela</option>
+      <option value="9">Colombia</option>
+      <option value="10">Cuba</option>
+      <option value="11">Bolivia</option>
+      <option value="13">Perú</option>
+      <option value="14">Ecuador</option>
+      <option value="15">Paraguay</option>
+      <option value="16">Uruguay</option>
+      <option value="17">Chile</option>
+    </select> <br> Valoración del Sitio: <select name="valoracion">
+      <option value="malo">Malo</option>
+      <option value="regular">Regular</option>
+      <option value="bueno" selected>Bueno</option>
+      <option value="muy bueno">Muy Bueno</option>
+      <option value="excelente">Excelente</option>
+    </select> <br> Comentarios: <textarea name="comentarios" rows="5"
+      cols="40">Ingrese aquí sus comentarios</textarea><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+  <div id="submitted-data"></div>
+
+  <script>
+    const form = document.getElementById('visita-form');
+    const submittedData = document.getElementById('submitted-data');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {};
+      for (const [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+
+      submittedData.innerHTML = `
+        <h2>Datos Enviados:</h2>
+        <p>Nombre: ${data.nombre}</p>
+        <p>Email: ${data.email}</p>
+        <p>País de Origen: ${data.pais}</p>
+        <p>Valoración del Sitio: ${data.valoracion}</p>
+        <p>Comentarios: ${data.comentarios}</p>
+      `;
+    });
+  </script>
+</body>
+</html>
