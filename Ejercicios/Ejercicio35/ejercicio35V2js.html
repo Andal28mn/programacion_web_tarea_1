@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prueba de formulario</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <form> Seleccione el archivo 1: <input type="file" id="archivo1"> <br>
+        Seleccione el archivo 2: <input type="file" id="archivo2"> <br>
+        <div id="result"></div> <input type="button" value="Enviar" onclick="sendFiles()">
+        <script> function sendFiles() {
+                var file1 = document.getElementById("archivo1").files[0];
+                var file2 = document.getElementById("archivo2").files[0];
+                if (file1 && file2) {
+                    document.getElementById("result").innerHTML =
+                        "Se han enviado correctamente: '" + file1.name + "' y '" + file2.name + "'";
+                } else {
+                    document.getElementById("result").innerHTML =
+                        "Por favor, seleccione dos archivos.";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>
