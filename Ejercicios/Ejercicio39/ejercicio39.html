@@ -6,6 +6,39 @@
     <title>	Ejercicio formulario - Inhabilitar controles.</title>
 </head>
 <body>
-    
+    <form>
+        Ingrese el nombre de la fruta:
+        <input type="text" name="fruta" size="20" disabled>
+        <br>
+        Ingrese el precio:
+        <input type="text" name="precio" size="12" disabled>
+        <br>
+        Descripción:<br>
+        <textarea disabled name="descripcion" rows="5" cols="60">   </textarea>
+        <br>
+        <input type="checkbox" name="op1" disabled>Fruta Tropical<br>
+        <input type="checkbox" name="op2" disabled>Fruta de Temporada<br>
+        <input type="checkbox" name="op3" disabled>Fruta Orgánica<br>
+        <input type="checkbox" name="op4" disabled>Fruta Exótica<br>
+        <br>
+        <input type="radio" name="tipo" value="1" disabled>Fruta Dulce<br>
+        <input type="radio" name="tipo" value="2" disabled>Fruta Ácida<br>
+        <input type="radio" name="tipo" value="3" disabled>Fruta Semiácida<br>
+        <input type="radio" name="tipo" value="4" disabled>Fruta Cítrica<br>
+        <br>
+        <select name="origen" disabled>
+          <option value="1">América del Sur</option>
+          <option value="2">América Central</option>
+          <option value="3">América del Norte</option>
+          <option value="4">Europa</option>
+          <option value="5">África</option>
+          <option value="6">Asia</option>
+          <option value="7">Oceanía</option>
+        </select>
+        <br>
+        <button type="submit" disabled>Agregar Fruta</button>
+        <br>
+        <input type="submit" value="Enviar" disabled>
+      </form>
 </body>
 </html>
