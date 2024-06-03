@@ -8,18 +8,31 @@
 </head>
 
 <body>
-    <form>
-    <fieldset>
-            <input type="text" name="nombre" size="20" readonly value="Anthony">
-            <br>
-            <input type="password" name="clave" size="12" readonly value="contraseña">
-            <br>
-            <textarea name="comentario" rows="5" cols="40" readonly>Comentario de prueba</textarea>
-            <br>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Borrar">
+    <form action="registrar_carro.php" method="post">
+        <h1>Registro de Autos</h1>
+        <fieldset>
+                <input type="text" name="marca" size="20" readonly value="Toyota">
+                <br>
+                <input type="password" name="placa" size="12" readonly value="ABC123">
+                <br>
+                <textarea name="descripcion" rows="5" cols="40" readonly>Sedan, color gris, año 2020</textarea>
+                <br>
+                Tipo de vehículo:
+                <input type="radio" id="tipo_sedan" name="tipo" value="sedan" checked>Sedán
+                <input type="radio" id="tipo_suv" name="tipo" value="suv">SUV
+                <input type="radio" id="tipo_pickup" name="tipo" value="pickup">Pickup
+                <br>
+                Opciones:
+                <input type="checkbox" id="opcion1" name="opciones[]" value="aire_acondicionado">Aire acondicionado
+                <input type="checkbox" id="opcion2" name="opciones[]" value="sunroof">Sunroof
+                <input type="checkbox" id="opcion3" name="opciones[]" value="rines_aleacion">Rines de aleación
+                <br>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar"> 
+        </fieldset>
     </form>
-    </fieldset>
+       
+        
 </body>
 
 </html>
