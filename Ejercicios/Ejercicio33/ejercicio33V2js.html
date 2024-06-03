@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba de formulario</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form onsubmit="registrarDatos(event)">
+  Nombre de usuario:
+  <input type="text" name="nombre" size="20" id="nombreInput">
+  <br>
+  Contraseña:
+  <input type="password" name="contrasena" size="20" id="contrasenaInput">
+  <br>
+  <button type="submit">Ingreso al<br>sitio</button>
+</form>
+<div id="resultadoDiv"></div>
+
+<script>
+function registrarDatos(event) {
+  event.preventDefault();
+  
+  // Obtener los valores de los campos del formulario
+  var nombreInput = document.getElementById('nombreInput');
+  var contrasenaInput = document.getElementById('contrasenaInput');
+  var nombre = nombreInput.value;
+  var contrasena = contrasenaInput.value;
+
+  // Mostrar los datos en la página
+  var resultadoDiv = document.getElementById('resultadoDiv');
+  resultadoDiv.innerHTML = 'Nombre de usuario: ' + nombre + '<br>Contraseña: ' + contrasena;
+}
+</script>
+</body>
+</html>
