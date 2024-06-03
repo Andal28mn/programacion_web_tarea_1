@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Formulario - agrupamiento de controles</title>
+</head>
+<body>
+  <form id="myForm">
+    <fieldset>
+      <legend>Datos del Cliente</legend>
+      Nombre: <input type="text" name="nombre" size="30" required><br>
+      Dirección: <input type="text" name="direccion" size="50" required><br>
+      Teléfono: <input type="tel" name="telefono" size="10" required><br>
+    </fieldset>
+    <fieldset>
+      <legend>Pedido de Pizzas</legend>
+      Pizza 1: <select name="pizza1">
+        <option value="1">Pepperoni</option>
+        <option value="2">Vegetariana</option>
+        <option value="3">Hawaiana</option>
+        <option value="4">Cuatro Quesos</option>
+        <option value="5">Tropical</option>
+      </select>
+      Tamaño: <select name="tamano1">
+        <option value="1">Personal</option>
+        <option value="2">Mediana</option>
+        <option value="3">Familiar</option>
+      </select>
+      Cantidad: <select name="cantidad1">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select><br>
+      Pizza 2: <select name="pizza2">
+        <option value="1">Pepperoni</option>
+        <option value="2">Vegetariana</option>
+        <option value="3">Hawaiana</option>
+        <option value="4">Cuatro Quesos</option>
+        <option value="5">Tropical</option>
+      </select>
+      Tamaño: <select name="tamano2">
+        <option value="1">Personal</option>
+        <option value="2">Mediana</option>
+        <option value="3">Familiar</option>
+      </select>
+      Cantidad: <select name="cantidad2">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </fieldset>
+    <input type="submit" value="Enviar Pedido">
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      const result = `Nombre: ${data.nombre}\nDirección: ${data.direccion}\nTeléfono: ${data.telefono}\nPizza 1: ${data.pizza1}, Tamaño: ${data.tamano1}, Cantidad: ${data.cantidad1}\nPizza 2: ${data.pizza2}, Tamaño: ${data.tamano2}, Cantidad: ${data.cantidad2}`;
+      document.getElementById('result').textContent = result;
+    });
+  </script>
+</body>
+</html>
